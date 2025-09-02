@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { CgProfile } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
+import { IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,14 +10,14 @@ const Navbar = () => {
     <div
       className="relative h-[90vh] bg-cover bg-center font-sans"
       style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")`,
+        backgroundImage: `url("https://i.ibb.co.com/MxycdV3z/1c7374919fa419ec2abcb24a9fc1024787f16aaa.jpg")`,
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Navbar */}
-      <nav className="relative z-10 container mx-auto flex justify-between items-center py-6 px-6 text-white">
+      <nav className="relative z-10 max-w-7xl mx-auto flex justify-between items-center py-6 px-6 text-white">
         {/* Logo */}
         <div className="text-2xl font-bold">CarHut</div>
 
@@ -32,7 +34,10 @@ const Navbar = () => {
 
           <div className="space-x-3">
             <button className="px-4 py-2 hover:text-[#405FF2] font-medium transition">
-              Sign In
+              <div className="flex gap-1.5 justify-center items-center">
+                <CgProfile />
+                <p>Sign In</p>
+              </div>
             </button>
             <button className="px-4 py-2 bg-white text-black rounded-[28px] hover:bg-[#405FF2] font-medium hover:text-white transition">
               Submit Listing
@@ -96,7 +101,7 @@ const Navbar = () => {
         {/* Search Box */}
         <div className="bg-white text-black rounded-[50px] w-full max-w-[930px] flex flex-wrap items-center justify-center p-4 shadow-lg mx-auto gap-3">
           <div className="flex-1 min-w-[120px]">
-            <select className="w-full px-4 py-3 border-none outline-none bg-transparent text-gray-800 font-medium">
+            <select className="w-full px-4 py-3 border-none outline-none bg-transparent">
               <option>Any Makes</option>
               <option>Audi</option>
               <option>BMW</option>
@@ -104,7 +109,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex-1 min-w-[120px]">
-            <select className="w-full px-4 py-3 border-none outline-none bg-transparent text-gray-800 font-medium">
+            <select className="w-full px-4 py-3 border-none outline-none bg-transparent">
               <option>Any Models</option>
               <option>Sedan</option>
               <option>SUV</option>
@@ -112,28 +117,60 @@ const Navbar = () => {
           </div>
 
           <div className="flex-1 min-w-[120px]">
-            <h2 className="w-full px-4 py-3 border-none outline-none bg-transparent text-gray-800 font-medium">
+            <h2 className="w-full px-4 py-3 border-none outline-none bg-transparent">
               Prices : All Prices
             </h2>
           </div>
 
-          <button className="bg-[#405FF2] text-white px-6 py-3 rounded-[60px] font-medium hover:bg-blue-700 w-full sm:w-[215px] mt-2 sm:mt-0">
-            Search Cars
+          <button className="bg-[#405FF2] flex justify-center items-center gap-1.5 text-white px-6 py-3 rounded-[60px] font-medium hover:bg-blue-700 w-full sm:w-[215px] mt-2 sm:mt-0">
+            <IoSearch /> <p>Search Cars</p>
           </button>
         </div>
 
         <p className="text-lg my-5">Or Browse Featured Model</p>
 
         {/* Car Type Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mt-6">
-          {["SUV", "Sedan", "Hatchback", "Coupe", "Hybrid"].map((type) => (
-            <button
-              key={type}
-              className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition"
-            >
-              {type}
-            </button>
-          ))}
+        <div className="flex flex-wrap justify-center gap-3 my-6">
+          <button className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition">
+            <img
+              className="inline mr-1.5"
+              src="https://i.ibb.co.com/hr8Pn9s/Vector.png"
+              alt=""
+            />
+            <span>SUV</span>
+          </button>
+          <button className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition">
+            <img
+              className="inline mr-1.5"
+              src="https://i.ibb.co.com/zhy3m9Zs/Vector-1.png"
+              alt=""
+            />
+            <span>Sedan</span>
+          </button>
+          <button className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition">
+            <img
+              className="inline mr-1.5"
+              src="https://i.ibb.co.com/RTYw02M5/Vector-2.png"
+              alt=""
+            />
+            <span>Hatchback</span>
+          </button>
+          <button className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition">
+            <img
+              className="inline mr-1.5"
+              src="https://i.ibb.co.com/j7MVVc7/Vector-3.png"
+              alt=""
+            />
+            <span>Coupe</span>
+          </button>
+          <button className="px-4 py-2 bg-white/30 rounded-full text-white hover:bg-[#405FF2] hover:text-white transition">
+            <img
+              className="inline mr-1.5"
+              src="https://i.ibb.co.com/qMZSF4w8/Vector-5.png"
+              alt=""
+            />
+            <span>Hybrid</span>
+          </button>
         </div>
       </div>
     </div>
