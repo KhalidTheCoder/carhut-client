@@ -63,8 +63,8 @@ const Brands = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row items-center justify-between mb-8">
-        <h2 className="text-xl md:text-2xl font-bold">
+      <div className="flex flex-col md:flex-row items-center justify-between p-12 mb-8">
+        <h2 className="text-xl md:text-3xl font-bold">
           Explore Our Premium Brands
         </h2>
         <Link className="font-semibold mt-4 md:mt-0">
@@ -77,11 +77,11 @@ const Brands = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-10 justify-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-10 justify-items-center px-2 pb-12">
         {brands.map((brand, index) => (
           <div
             key={index}
-            className="flex flex-col items-center justify-center p-4 rounded-xl border border-[#E9E9E9] transition-transform transform hover:scale-105
+            className="flex flex-col bg-white items-center justify-center p-4 rounded-xl border border-[#E9E9E9] transition-transform transform hover:scale-105
              w-full sm:w-40 md:w-52
              aspect-[209/180]"
           >
