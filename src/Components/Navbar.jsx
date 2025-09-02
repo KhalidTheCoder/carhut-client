@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Navbar */}
-      <nav className="relative z-10 max-w-7xl mx-auto flex justify-between items-center py-6 px-6 text-white">
+      <nav className="relative z-10  mx-auto flex justify-between items-center py-6 px-12 text-white">
         {/* Logo */}
         <div className="text-2xl font-bold">CarHut</div>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
       {/* Banner Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-[70vh] text-center text-white px-4">
         <p className="text-lg mb-2">Find cars for sale and not rent near you</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold py-8 mb-4">
           Find Your Perfect Car
         </h1>
 
@@ -127,7 +127,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <p className="text-lg my-5">Or Browse Featured Model</p>
+        <p className="text-lg my-5 pt-12">Or Browse Featured Model</p>
 
         {/* Car Type Filter */}
         <div className="flex flex-wrap justify-center gap-3 my-6">
