@@ -18,7 +18,7 @@ const FairPrice = () => {
         </div>
 
         {/* Right Section: Text and Button */}
-        <div className="w-full lg:w-1/2 mt-8 pl-8 lg:mt-0 lg:pl-12">
+        <div className="w-full lg:w-1/2 mt-8 px-8 lg:mt-0 lg:pl-12">
           <h2 className="text-xl md:text-2xl font-bold mb-4">
             Get A Fair Price For Your Car <br className="hidden md:inline" />{" "}
             Sell To Us Today
