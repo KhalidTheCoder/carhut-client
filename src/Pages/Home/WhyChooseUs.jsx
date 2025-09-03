@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <div className="text-black w-full max-w-7xl mx-auto p-6 md:p-12 mt-8">
+        <div className="text-black w-full max-w-7xl mx-auto py-6 md:py-12 mt-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-12">Why Choose Us?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                 {features.map((feature, index) => (
