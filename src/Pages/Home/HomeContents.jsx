@@ -5,6 +5,8 @@ import CompanyStats from "./CompanyStats";
 import WhyChooseUs from "./WhyChooseUs";
 import AllVehicles from "./Vehicles/AllVehicles";
 import TestimonialSlider from "./TestimonialSlider";
+import BoxCar from "./Vehicles/BoxCar";
+import CarOptionCards from "./Vehicles/CarOptionCard";
 
 const HomeContents = () => {
   return (
@@ -15,6 +17,8 @@ const HomeContents = () => {
       <CompanyStats></CompanyStats>
       <WhyChooseUs></WhyChooseUs>
       <TestimonialSlider></TestimonialSlider>
+      <BoxCar></BoxCar>
+      <CarOptionCards></CarOptionCards>
     </div>
   );
 };

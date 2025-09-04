@@ -69,7 +69,7 @@ const Brands = () => {
         </h2>
         <Link className="font-semibold mt-4 md:mt-0">
           <div className="flex justify-center items-center gap-1.5">
-            <p>View All Brands</p>{" "}
+            <p>View All Brands</p>
             <span>
               <MdArrowOutward />
             </span>
