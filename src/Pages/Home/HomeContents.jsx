@@ -7,6 +7,7 @@ import AllVehicles from "./Vehicles/AllVehicles";
 import TestimonialSlider from "./TestimonialSlider";
 import BoxCar from "./Vehicles/BoxCar";
 import CarOptionCards from "./Vehicles/CarOptionCard";
+import PopularMakes from "./Vehicles/PopularMakes";
 
 const HomeContents = () => {
   return (
@@ -16,6 +17,7 @@ const HomeContents = () => {
       <FairPrice></FairPrice>
       <CompanyStats></CompanyStats>
       <WhyChooseUs></WhyChooseUs>
+      <PopularMakes></PopularMakes>
       <TestimonialSlider></TestimonialSlider>
       <BoxCar></BoxCar>
       <CarOptionCards></CarOptionCards>
