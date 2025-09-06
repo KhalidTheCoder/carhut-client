@@ -80,13 +80,13 @@ const PopularMakes = () => {
           <div className="absolute -bottom-10 left-0 flex gap-3">
             <button
               onClick={() => scroll("left")}
-              className="p-2 rounded-full outline text-white hover:bg-gray-700 transition"
+              className="px-2 rounded-2xl outline text-white hover:bg-gray-700 transition"
             >
               &#8592;
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2 rounded-full outline text-white hover:bg-gray-700 transition"
+              className="px-2 rounded-2xl outline text-white hover:bg-gray-700 transition"
             >
               &#8594;
             </button>

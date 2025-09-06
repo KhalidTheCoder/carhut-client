@@ -10,7 +10,7 @@ const CarCard = ({ car }) => {
     Featured: "bg-yellow-500 text-black",
   };
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
       <div className="relative">
         <img
           src={

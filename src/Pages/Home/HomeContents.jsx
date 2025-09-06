@@ -8,6 +8,7 @@ import TestimonialSlider from "./TestimonialSlider";
 import BoxCar from "./Vehicles/BoxCar";
 import CarOptionCards from "./Vehicles/CarOptionCard";
 import PopularMakes from "./Vehicles/PopularMakes";
+import LatestBlogPosts from "./Blogs/LatestBlogPosts";
 
 const HomeContents = () => {
   return (
@@ -19,6 +20,7 @@ const HomeContents = () => {
       <WhyChooseUs></WhyChooseUs>
       <PopularMakes></PopularMakes>
       <TestimonialSlider></TestimonialSlider>
+      <LatestBlogPosts></LatestBlogPosts>
       <BoxCar></BoxCar>
       <CarOptionCards></CarOptionCards>
     </div>

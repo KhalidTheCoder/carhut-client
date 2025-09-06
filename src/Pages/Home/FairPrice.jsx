@@ -4,8 +4,8 @@ import { MdArrowOutward } from "react-icons/md";
 
 const FairPrice = () => {
   return (
-    <div className="bg-white">
-      <div className="bg-[#EEF1FB] text-black w-full shadow-lg max-w-7xl mx-auto rounded-[16px] mt-8 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+    <div>
+      <div className="text-black w-full max-w-7xl mx-auto rounded-[16px] mt-8 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
         {/* Left Section: Image */}
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="w-full h-64 sm:h-80 md:h-[400px] lg:h-full">

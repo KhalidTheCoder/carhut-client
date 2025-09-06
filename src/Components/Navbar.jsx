@@ -2,9 +2,18 @@ import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
+import { Link, useNavigate } from "react-router";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchBrand, setSearchBrand] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (searchBrand.trim() !== "") {
+      navigate(`/search/${searchBrand}`);
+    }
+  };
 
   return (
     <>
@@ -27,7 +36,9 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex gap-5 items-center">
               <ul className="flex space-x-6 font-medium">
-                <li className="hover:text-[#405FF2] cursor-pointer">Home</li>
+                <Link to="/" className="hover:text-[#405FF2] cursor-pointer">
+                  Home
+                </Link>
                 <li className="hover:text-[#405FF2] cursor-pointer">
                   Listings
                 </li>
@@ -63,7 +74,9 @@ const Navbar = () => {
           {menuOpen && (
             <div className="absolute top-full left-0 w-full text-white z-30 p-6 flex flex-col space-y-4 lg:hidden bg-black/90">
               <ul className="flex flex-col space-y-4 text-lg font-medium">
-                <li className="hover:text-[#405FF2] cursor-pointer">Home</li>
+                <Link to="/" className="hover:text-[#405FF2] cursor-pointer">
+                  Home
+                </Link>
                 <li className="hover:text-[#405FF2] cursor-pointer">
                   Listings
                 </li>
@@ -125,16 +138,50 @@ const Navbar = () => {
               </h2>
             </div>
 
-            <button className="bg-[#405FF2] hidden md:flex justify-center items-center gap-1 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-[30px] sm:rounded-[60px] font-medium hover:bg-blue-700 text-xs sm:text-sm md:text-base whitespace-nowrap">
-              <IoSearch className="text-sm sm:text-base md:text-lg" />
-              <p>Search Cars</p>
-            </button>
+            <div className="lg:flex w-full max-w-md mx-auto hidden">
+              {/* Input */}
+              <input
+                type="text"
+                placeholder="Search By Brand"
+                value={searchBrand}
+                onChange={(e) => setSearchBrand(e.target.value)}
+                className="flex-1 px-6 py-3 rounded-l-full border border-gray-300 text-xs sm:text-sm md:text-base outline-none"
+              />
+
+              {/* Button */}
+              <button
+                onClick={handleSearch}
+                className="px-6 py-3 bg-[#405FF2] hover:bg-blue-700 text-white rounded-r-full font-medium text-xs sm:text-sm md:text-base"
+              >
+                <div className="flex items-center gap-2">
+                  <IoSearch className="text-sm sm:text-base md:text-lg" />
+                  <span>Search Cars</span>
+                </div>
+              </button>
+            </div>
           </div>
 
-          <button className="bg-[#405FF2] md:hidden mt-6 flex justify-center items-center gap-1 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-[30px] sm:rounded-[60px] font-medium hover:bg-blue-700 text-xs sm:text-sm md:text-base whitespace-nowrap">
-            <IoSearch className="text-sm sm:text-base md:text-lg" />
-            <p>Search Cars</p>
-          </button>
+          <div className="flex w-full max-w-md mx-auto py-5 lg:hidden">
+            {/* Input */}
+            <input
+              type="text"
+              placeholder="Search By Brand"
+              value={searchBrand}
+              onChange={(e) => setSearchBrand(e.target.value)}
+              className="flex-1 px-6 py-3 rounded-l-full border border-gray-300 text-xs sm:text-sm md:text-base outline-none"
+            />
+
+            {/* Button */}
+            <button
+              onClick={handleSearch}
+              className="px-6 py-3 bg-[#405FF2] hover:bg-blue-700 text-white rounded-r-full font-medium text-xs sm:text-sm md:text-base"
+            >
+              <div className="flex items-center gap-2">
+                <IoSearch className="text-sm sm:text-base md:text-lg" />
+                <span>Search Cars</span>
+              </div>
+            </button>
+          </div>
 
           <p className="text-lg py-16">Or Browse Featured Model</p>
 

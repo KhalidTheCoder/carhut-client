@@ -61,7 +61,7 @@ const TestimonialSlider = () => {
 
         {/* Slider Container */}
         <div className="relative">
-          <div className="rounded-lg overflow-hidden flex flex-col md:flex-row justify-center md:justify-between items-center max-w-7xl py-8 mx-auto gap-6">
+          <div className="rounded-lg overflow-hidden flex flex-col md:flex-row md:gap-x-[152px] items-center max-w-7xl py-8 mx-auto">
             {/* Image Column */}
             <div className="">
               <img
@@ -72,7 +72,7 @@ const TestimonialSlider = () => {
             </div>
 
             {/* Review Content Column */}
-            <div className="w-full md:w-1/2 p-4 md:pl-8">
+            <div className="w-full md:w-1/2 md:p-0 p-4">
               {/* Star Rating */}
               <div className="flex items-center mb-2">
                 {Array.from({ length: 5 }, (_, i) => (
@@ -113,12 +113,12 @@ const TestimonialSlider = () => {
 
           {/* Previous Arrow */}
           <div
-            className="absolute bg-white rounded-full shadow-2xl top-1/2 left-8 transform -translate-y-1/2 cursor-pointer z-10 p-2"
+            className="absolute bg-white rounded-2xl shadow-2xl top-1/2 left-8 transform -translate-y-1/2 cursor-pointer z-10 px-2"
             onClick={prevReview}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-gray-400 hover:text-gray-600 transition-colors"
+              className="h-8 w-8 text-black transition-colors"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -134,12 +134,12 @@ const TestimonialSlider = () => {
 
           {/* Next Arrow */}
           <div
-            className="absolute top-1/2 bg-white rounded-full shadow-2xl right-8 transform -translate-y-1/2 cursor-pointer z-10 p-2"
+            className="absolute top-1/2 bg-white rounded-2xl shadow-2xl right-8 transform -translate-y-1/2 cursor-pointer z-10 px-2"
             onClick={nextReview}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 text-gray-400 hover:text-gray-600 transition-colors"
+              className="h-8 w-8 text-black transition-colors"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

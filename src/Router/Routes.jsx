@@ -2,6 +2,7 @@ import App from "../App";
 import { createBrowserRouter } from "react-router";
 
 import Home from "../Pages/Home/Home";
+import SearchResults from "../Pages/SearchResults";
 
 const Routes = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const Routes = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "search/:brand",
+        element: <SearchResults />,
       },
       //   {
       //     path: "/login",
