@@ -12,7 +12,7 @@ import LatestBlogPosts from "./Blogs/LatestBlogPosts";
 
 const HomeContents = () => {
   return (
-    <div className="bg-[#F9FBFC] text-black w-full shadow-lg rounded-t-3xl md:rounded-t-[80px] md:-mt-16 relative z-10">
+    <div className="bg-[#F9FBFC] text-black w-full shadow-lg rounded-t-3xl rounded-b-3xl md:rounded-b-[80px] md:-mb-18 md:rounded-t-[80px] md:-mt-16 relative z-10">
       <Brands></Brands>
       <AllVehicles></AllVehicles>
       <FairPrice></FairPrice>

@@ -27,21 +27,21 @@ const FairPrice = () => {
             We are committed to providing our customers with exceptional
             service, competitive pricing, and a wide range of.
           </p>
-          <ul className="list-disc list-inside space-y-2 mb-8">
-            <ul className="flex gap-2">
-              <div className="bg-white flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
+          <ul className=" space-y-2 mb-8">
+            <ul className="flex gap-6">
+              <div className="bg-white p-2 flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
                 <FaCheck size={10} />
               </div>
-              We are the UK’s largest provider, with more patrols in more places
+             <p> We are the UK’s largest provider, with more patrols in more places</p>
             </ul>
             <ul className="flex gap-2">
-              <div className="bg-white flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
+              <div className="bg-white p-2 flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
                 <FaCheck size={10} />
               </div>
               You get 24/7 roadside assistance
             </ul>
             <ul className="flex gap-2">
-              <div className="bg-white flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
+              <div className="bg-white p-2 flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
                 <FaCheck size={10} />
               </div>
               We fix 4 out of 5 cars at the roadside
