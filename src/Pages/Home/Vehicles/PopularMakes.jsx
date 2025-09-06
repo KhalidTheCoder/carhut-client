@@ -1,22 +1,98 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PopularCar from "../../../Components/PopularCar";
+import { MdArrowOutward } from "react-icons/md";
 
 const PopularMakes = () => {
-  const [popularCar, setPopularCar] = useState([]);
+  const [popularCars, setPopularCars] = useState([]);
+  const [activeMake, setActiveMake] = useState("Audi");
+  const carouselRef = useRef(null);
 
   useEffect(() => {
     fetch("http://localhost:5000/cars")
       .then((res) => res.json())
-      .then((data) => setPopularCar(data));
+      .then((data) => setPopularCars(data));
   }, []);
 
+  // Filter cars by selected make
+  const filteredCars = popularCars.filter(
+    (car) => car.brand && car.brand.toLowerCase() === activeMake.toLowerCase()
+  );
+
+  // Scroll function
+  const scroll = (direction) => {
+    if (carouselRef.current) {
+      const cardWidth = carouselRef.current.children[0].offsetWidth + 24;
+      carouselRef.current.scrollBy({
+        left: direction === "left" ? -cardWidth : cardWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="flex overflow-x-auto gap-6 pb-4 max-w-7xl mx-auto">
-      {popularCar.map((car) => (
-        <div key={car._id}>
-          <PopularCar car={car} />
+    <div className="bg-[#050B20]">
+      <div className="max-w-7xl mx-auto py-20">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold mb-4 md:mb-0 text-white">Popular Makes</h2>
+          <button className="flex items-center gap-1 text-gray-300 hover:text-white transition">
+            View All <MdArrowOutward />
+          </button>
         </div>
-      ))}
+
+        {/* Tabs */}
+        <div className="flex gap-6 mb-8 border-b border-gray-700 pb-2">
+          {["Audi", "Ford", "Mercedes Benz"].map((make) => (
+            <button
+              key={make}
+              onClick={() => setActiveMake(make)}
+              className={`pb-2 font-medium transition ${
+                activeMake === make
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {make}
+            </button>
+          ))}
+        </div>
+
+        {/* Cars Carousel */}
+        <div className="relative">
+          <div
+            className="flex overflow-x-auto gap-6 pb-4 no-scrollbar"
+            ref={carouselRef}
+          >
+            {filteredCars.length > 0 ? (
+              filteredCars.map((car) => (
+                <div key={car._id} className="flex-none">
+                  <PopularCar car={car} />
+                </div>
+              ))
+            ) : (
+              <div className="text-gray-400">
+                No cars available for {activeMake}
+              </div>
+            )}
+          </div>
+
+          {/* Carousel Controls */}
+          <div className="absolute -bottom-10 left-0 flex gap-3">
+            <button
+              onClick={() => scroll("left")}
+              className="p-2 rounded-full outline text-white hover:bg-gray-700 transition"
+            >
+              &#8592;
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="p-2 rounded-full outline text-white hover:bg-gray-700 transition"
+            >
+              &#8594;
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
