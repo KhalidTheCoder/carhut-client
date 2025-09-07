@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
 
         {/* Main Navigation Section */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           {/* Company */}
           <div className="space-y-3">
             <h3 className="font-semibold text-white mb-2">Company</h3>

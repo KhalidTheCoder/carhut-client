@@ -4,7 +4,7 @@ const CarOptionCards = () => {
   return (
     <div className="max-w-7xl mx-auto py-12 flex flex-col lg:flex-row gap-6">
       {/* Card 1 */}
-      <div className="bg-blue-50 rounded-2xl w-full lg:w-[685px] h-auto lg:h-[393.72px] p-6 sm:p-10 lg:p-[80px] flex flex-col shadow-sm relative">
+      <div className="bg-blue-50 rounded-2xl w-full lg:w-[685px] h-auto lg:h-[393.72px] p-6 sm:p-10 lg:p-[80px] flex flex-col relative">
         <div>
           <h2 className="text-xl md:text-xl font-semibold text-gray-900 mb-4">
             Are You Looking <br /> For a Car ?
@@ -31,7 +31,7 @@ const CarOptionCards = () => {
       </div>
 
       {/* Card 2 */}
-      <div className="bg-pink-50 rounded-2xl w-full lg:w-[685px] h-auto lg:h-[393.72px] p-6 sm:p-10 lg:p-[80px] flex flex-col shadow-sm relative">
+      <div className="bg-pink-50 rounded-2xl w-full lg:w-[685px] h-auto lg:h-[393.72px] p-6 sm:p-10 lg:p-[80px] flex flex-col relative">
         <div>
           <h2 className="text-xl md:text-xl font-semibold text-gray-900 mb-4">
             Do You Want to <br /> Sell a Car ?

@@ -19,9 +19,9 @@ const HomeContents = () => {
       <CompanyStats></CompanyStats>
       <WhyChooseUs></WhyChooseUs>
       <PopularMakes></PopularMakes>
+      <BoxCar></BoxCar>
       <TestimonialSlider></TestimonialSlider>
       <LatestBlogPosts></LatestBlogPosts>
-      <BoxCar></BoxCar>
       <CarOptionCards></CarOptionCards>
     </div>
   );

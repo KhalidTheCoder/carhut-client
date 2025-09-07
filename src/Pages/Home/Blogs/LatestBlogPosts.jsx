@@ -41,7 +41,7 @@ const LatestBlogPosts = () => {
         {blogs.map((blog) => (
           <div
             key={blog._id}
-            className="bg-white rounded-2xl overflow-hidden shadow-lg"
+            className="rounded-2xl overflow-hidden"
           >
             <div className="relative">
               <img
@@ -54,7 +54,7 @@ const LatestBlogPosts = () => {
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="py-6">
               <p className="text-sm text-gray-500 mb-2">
                 Admin ·{" "}
                 {new Date(blog.date).toLocaleDateString("en-US", {
