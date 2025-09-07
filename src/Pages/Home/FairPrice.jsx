@@ -5,7 +5,7 @@ import { MdArrowOutward } from "react-icons/md";
 const FairPrice = () => {
   return (
     <div>
-      <div className="text-black w-full max-w-7xl mx-auto rounded-[16px] mt-8 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+      <div className="text-black bg-[rgba(238,241,251,1)] w-full max-w-7xl mx-auto rounded-[16px] mt-8 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
         {/* Left Section: Image */}
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="w-full h-64 sm:h-80 md:h-[400px] lg:h-full">
@@ -28,11 +28,14 @@ const FairPrice = () => {
             service, competitive pricing, and a wide range of.
           </p>
           <ul className=" space-y-2 mb-8">
-            <ul className="flex gap-6">
+            <ul className="flex gap-2">
               <div className="bg-white p-2 flex justify-center items-center rounded-3xl w-[25px] h-[25px]">
                 <FaCheck size={10} />
               </div>
-             <p> We are the UK’s largest provider, with more patrols in more places</p>
+              <p>
+                We are the UK’s largest provider, with more patrols in more
+                places
+              </p>
             </ul>
             <ul className="flex gap-2">
               <div className="bg-white p-2 flex justify-center items-center rounded-3xl w-[25px] h-[25px]">

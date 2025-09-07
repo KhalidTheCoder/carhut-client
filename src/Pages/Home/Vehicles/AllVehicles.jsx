@@ -80,11 +80,11 @@ const AllVehicles = () => {
     <div className="max-w-7xl mx-auto py-8">
       {/* Header & Category Filter */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h2 className="text-2xl font-bold mb-4 md:mb-0">
+        <h2 className="text-xl md:text-3xl font-bold">
           Explore All Vehicles
         </h2>
         <Link>
-          <div className="flex gap-1.5 justify-center items-center">
+          <div className="flex gap-1.5 font-semibold justify-center items-center">
             <p>View All</p>
             <MdArrowOutward />
           </div>

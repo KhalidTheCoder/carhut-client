@@ -49,8 +49,8 @@ const TestimonialSlider = () => {
     <div className="py-16">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="max-w-7xl mx-auto flex justify-between items-end mb-12">
-          <h2 className="text-4xl font-semibold text-gray-900">
+        <div className="max-w-7xl mx-auto flex justify-between items-center mb-12">
+          <h2 className="text-xl md:text-3xl font-bold">
             What our customers say
           </h2>
           <p className="text-gray-500 text-sm text-right">

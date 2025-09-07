@@ -34,8 +34,8 @@ const PopularMakes = () => {
       <div className="max-w-7xl mx-auto py-20">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold mb-4 md:mb-0 text-white">Popular Makes</h2>
-          <button className="flex items-center gap-1 text-gray-300 hover:text-white transition">
+          <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-0 text-white">Popular Makes</h2>
+          <button className="flex items-center font-semibold gap-1 text-gray-300 hover:text-white transition">
             View All <MdArrowOutward />
           </button>
         </div>

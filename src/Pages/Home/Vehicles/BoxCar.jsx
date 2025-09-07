@@ -50,9 +50,9 @@ export default function BoxCar() {
     <div className="max-w-7xl mx-auto py-12">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold">Shop BoxCar Your Way</h2>
+        <h2 className="text-xl md:text-3xl font-bold">Shop BoxCar Your Way</h2>
         <Link to="/cars">
-          <div className="flex gap-1.5 justify-center items-center">
+          <div className="flex gap-1.5 font-semibold justify-center items-center">
             <p>View All</p>
             <MdArrowOutward />
           </div>
@@ -60,15 +60,15 @@ export default function BoxCar() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-6 border-b">
+      <div className="flex gap-6 border-b border-gray-200">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             className={`pb-2 text-sm font-medium ${
               activeTab === tab.id
-                ? "border-b-2 border-blue-600 text-blue-600"
-                : "text-gray-600 hover:text-black"
+                ? "border-b-2 border-blue-600"
+                : "text-black"
             }`}
           >
             {tab.label}

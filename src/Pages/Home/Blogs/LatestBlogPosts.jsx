@@ -28,9 +28,9 @@ const LatestBlogPosts = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <div className="flex justify-between items-center mb-10 sm:px-2">
-        <h2 className="text-3xl font-bold text-gray-900">Latest Blog Posts</h2>
+        <h2 className="text-xl md:text-3xl font-bold">Latest Blog Posts</h2>
         <Link>
-          <div className="flex gap-1.5 justify-center items-center">
+          <div className="flex gap-1.5 font-semibold justify-center items-center">
             <p>View All</p>
             <MdArrowOutward />
           </div>
@@ -39,10 +39,7 @@ const LatestBlogPosts = () => {
 
       <div className="grid gap-6 sm:grid-cols-3">
         {blogs.map((blog) => (
-          <div
-            key={blog._id}
-            className="rounded-2xl overflow-hidden"
-          >
+          <div key={blog._id} className="rounded-2xl overflow-hidden">
             <div className="relative">
               <img
                 src={blog.image}
