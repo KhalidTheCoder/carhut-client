@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
@@ -6,13 +6,41 @@ import { Link, useNavigate } from "react-router";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchBrand, setSearchBrand] = useState("");
+  const [brands, setBrands] = useState([]);
+  const [models, setModels] = useState([]);
+  const [carType, setCarType] = useState("all");
+  const [selectedBrand, setSelectedBrand] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
   const navigate = useNavigate();
 
-  const handleSearch = () => {
-    if (searchBrand.trim() !== "") {
-      navigate(`/search/${searchBrand}`);
-    }
+  useEffect(() => {
+    fetch("http://localhost:5000/cars/brands")
+      .then((res) => res.json())
+      .then((data) => setBrands(data))
+      .catch((err) => console.error(err));
+  }, []);
+  // console.log(brands);
+
+  // Fetch models when brand changes
+  useEffect(() => {
+    if (!selectedBrand) return setModels([]);
+    fetch(`http://localhost:5000/cars/models?brand=${selectedBrand}`)
+      .then((res) => res.json())
+      .then((data) => setModels(data))
+      .catch((err) => console.error(err));
+  }, [selectedBrand]);
+
+  console.log(models);
+
+  const handleSearch = (typeParam = carType) => {
+    let query = [];
+
+    if (typeParam && typeParam !== "all") query.push(`type=${typeParam}`);
+    if (selectedBrand) query.push(`brand=${selectedBrand}`);
+    if (selectedModel) query.push(`model=${selectedModel}`);
+
+    const finalQuery = query.length > 0 ? `?${query.join("&")}` : "";
+    navigate(`/search${finalQuery}`);
   };
 
   return (
@@ -109,26 +137,73 @@ const Navbar = () => {
 
           {/* All | New | Used */}
           <div className="flex items-center justify-center gap-6 font-medium mb-6">
-            <button className="hover:text-[#405FF2] transition">All</button>
-            <button className="hover:text-[#405FF2] transition">New</button>
-            <button className="hover:text-[#405FF2] transition">Used</button>
+            <button
+              className={`hover:text-[#405FF2] transition ${
+                carType === "all" ? "text-[#405FF2]" : ""
+              }`}
+              onClick={() => {
+                setCarType("all");
+                handleSearch("all");
+              }}
+            >
+              All
+            </button>
+
+            <button
+              className={`hover:text-[#405FF2] transition ${
+                carType === "new" ? "text-[#405FF2]" : ""
+              }`}
+              onClick={() => {
+                setCarType("new");
+                handleSearch("new");
+              }}
+            >
+              New
+            </button>
+
+            <button
+              className={`hover:text-[#405FF2] transition ${
+                carType === "used" ? "text-[#405FF2]" : ""
+              }`}
+              onClick={() => {
+                setCarType("used");
+                handleSearch("used");
+              }}
+            >
+              Used
+            </button>
           </div>
 
           {/* Search Box */}
           <div className="bg-white text-black rounded-[40px] sm:rounded-[50px] w-full max-w-[930px] flex items-center justify-between p-2 sm:p-4 shadow-lg mx-auto gap-2 sm:gap-3">
             <div className="flex-1 min-w-[70px] sm:min-w-[120px]">
-              <select className="w-full px-2 py-2 sm:px-4 sm:py-3 border-none outline-none bg-transparent rounded-[30px] sm:rounded-[50px] text-xs sm:text-sm md:text-base">
-                <option>Any Makes</option>
-                <option>Audi</option>
-                <option>BMW</option>
+              <select
+                className="w-full px-2 py-2 sm:px-4 sm:py-3 border-none outline-none bg-transparent rounded-[30px] sm:rounded-[50px] text-xs sm:text-sm md:text-base"
+                value={selectedBrand}
+                onChange={(e) => setSelectedBrand(e.target.value)}
+              >
+                <option value="">Any Makes</option>
+                {brands.map((brand) => (
+                  <option key={brand} value={brand}>
+                    {brand}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="flex-1 min-w-[70px] sm:min-w-[120px]">
-              <select className="w-full px-2 py-2 sm:px-4 sm:py-3 border-none outline-none bg-transparent rounded-[30px] sm:rounded-[50px] text-xs sm:text-sm md:text-base">
-                <option>Any Models</option>
-                <option>Sedan</option>
-                <option>SUV</option>
+              <select
+                className="w-full px-2 py-2 sm:px-4 sm:py-3 border-none outline-none bg-transparent rounded-[30px] sm:rounded-[50px] text-xs sm:text-sm md:text-base"
+                value={selectedModel}
+                onChange={(e) => setSelectedModel(e.target.value)}
+                disabled={!selectedBrand}
+              >
+                <option value="">Any Models</option>
+                {models.map((model) => (
+                  <option key={model} value={model}>
+                    {model}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -138,48 +213,24 @@ const Navbar = () => {
               </h2>
             </div>
 
-            <div className="lg:flex w-full max-w-md mx-auto hidden">
-              {/* Input */}
-              <input
-                type="text"
-                placeholder="Search By Brand"
-                value={searchBrand}
-                onChange={(e) => setSearchBrand(e.target.value)}
-                className="flex-1 px-6 py-3 rounded-l-full border border-gray-300 text-xs sm:text-sm md:text-base outline-none"
-              />
-
-              {/* Button */}
-              <button
-                onClick={handleSearch}
-                className="px-6 py-3 bg-[#405FF2] hover:bg-blue-700 text-white rounded-r-full font-medium text-xs sm:text-sm md:text-base"
-              >
-                <div className="flex items-center gap-2">
-                  <IoSearch className="text-sm sm:text-base md:text-lg" />
-                  <span>Search Cars</span>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <div className="flex w-full max-w-md mx-auto py-5 lg:hidden">
-            {/* Input */}
-            <input
-              type="text"
-              placeholder="Search By Brand"
-              value={searchBrand}
-              onChange={(e) => setSearchBrand(e.target.value)}
-              className="flex-1 px-6 py-3 rounded-l-full border border-gray-300 text-xs sm:text-sm md:text-base outline-none"
-            />
-
             {/* Button */}
             <button
-              onClick={handleSearch}
-              className="px-6 py-3 bg-[#405FF2] hover:bg-blue-700 text-white rounded-r-full font-medium text-xs sm:text-sm md:text-base"
+              onClick={() => handleSearch()}
+              className="bg-[#405FF2] hidden md:flex justify-center items-center gap-1 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-[30px] sm:rounded-[60px] font-medium hover:bg-blue-700 text-xs sm:text-sm md:text-base whitespace-nowrap"
             >
-              <div className="flex items-center gap-2">
-                <IoSearch className="text-sm sm:text-base md:text-lg" />
-                <span>Search Cars</span>
-              </div>
+              <IoSearch className="text-sm sm:text-base md:text-lg" />
+              <p>Search Cars</p>
+            </button>
+          </div>
+
+          <div className="flex w-full max-w-md justify-center mx-auto py-5 md:hidden">
+            {/* Button */}
+            <button
+              onClick={() => handleSearch()}
+              className="bg-[#405FF2] flex justify-center items-center gap-1 text-white px-3 py-2 sm:px-5 sm:py-3 rounded-[30px] sm:rounded-[60px] font-medium hover:bg-blue-700 text-xs sm:text-sm md:text-base whitespace-nowrap"
+            >
+              <IoSearch className="text-sm sm:text-base md:text-lg" />
+              <p>Search Cars</p>
             </button>
           </div>
 

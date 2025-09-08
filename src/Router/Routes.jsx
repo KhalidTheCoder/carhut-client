@@ -16,7 +16,7 @@ const Routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "search/:brand",
+        path: "search",
         element: <SearchResults />,
       },
       //   {
