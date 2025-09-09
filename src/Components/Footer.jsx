@@ -16,9 +16,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your email address"
-              className="w-full rounded-full border border-gray-600 px-6 py-3 pr-32 text-white bg-[#2A2E35] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-full px-8 py-4 pr-32 text-white bg-[#2A2E35] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#4871F8] text-white px-6 py-2 rounded-full hover:bg-[#3d63d9] font-medium transition-colors">
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#4871F8] text-white px-6 py-2 rounded-full hover:bg-[#3d63d9] font-medium transition-colors">
               Sign Up
             </button>
           </div>
