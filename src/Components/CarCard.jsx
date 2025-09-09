@@ -1,4 +1,5 @@
 import React from "react";
+import { IoBookmarkOutline } from "react-icons/io5";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router";
 
@@ -20,6 +21,9 @@ const CarCard = ({ car }) => {
           alt={car.name}
           className="w-full h-48 object-cover rounded-lg"
         />
+        <div className="absolute top-2 right-2 bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:bg-gray-100">
+          <IoBookmarkOutline />
+        </div>
         {car.tags && car.tags.length > 0 && (
           <div className="absolute top-2 left-2 flex flex-wrap gap-2">
             {car.tags.map((tag, idx) => {

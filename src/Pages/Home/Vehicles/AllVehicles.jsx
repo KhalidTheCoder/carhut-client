@@ -77,12 +77,10 @@ const AllVehicles = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Header & Category Filter */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h2 className="text-xl md:text-3xl font-bold">
-          Explore All Vehicles
-        </h2>
+        <h2 className="text-xl md:text-3xl font-bold">Explore All Vehicles</h2>
         <Link>
           <div className="flex gap-1.5 font-semibold justify-center items-center">
             <p>View All</p>
@@ -90,14 +88,14 @@ const AllVehicles = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center space-x-6 p-1 my-8">
+      <div className="flex items-center space-x-6 my-8 border-b border-gray-300 relative">
         {["In Stock", "New Cars", "Used Cars"].map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`relative font-medium transition-colors duration-200 ${
+            className={`relative pb-2 font-medium transition-colors duration-200 ${
               activeCategory === category
-                ? "after:content-[''] after:block after:h-[2px] after:w-full after:bg-blue-500"
+                ? "text-blue-500 border-b-2 border-blue-500"
                 : "hover:text-blue-500"
             }`}
           >
@@ -134,13 +132,13 @@ const AllVehicles = () => {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scroll("left")}
-              className="p-2 rounded-full bg-white shadow-sm border border-gray-200"
+              className="w-[60px] h-[40px] flex justify-center items-center rounded-[30px] bg-white border border-gray-200"
             >
               <ChevronLeftIcon className="h-5 w-5 text-gray-800" />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-2 rounded-full bg-white shadow-sm border border-gray-200"
+              className="w-[60px] h-[40px] flex justify-center items-center rounded-[30px] bg-white border border-gray-200"
             >
               <ChevronRightIcon className="h-5 w-5 text-gray-800" />
             </button>

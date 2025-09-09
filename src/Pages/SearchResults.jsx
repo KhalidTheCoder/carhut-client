@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import CarCard from "../Components/CarCard";
+import { MdArrowOutward } from "react-icons/md";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -29,7 +30,15 @@ const SearchResults = () => {
   return (
     <div className="bg-[#F9FBFC] text-black w-full shadow-lg rounded-t-3xl rounded-b-3xl md:rounded-b-[80px] md:-mb-18 md:rounded-t-[80px] md:-mt-16 relative z-10">
       <div className="max-w-7xl mx-auto px-8 py-12">
-        <h2 className="text-3xl font-semibold mb-4">Search Results</h2>
+        <div className="flex justify-between">
+          <h2 className="text-xl md:text-3xl font-bold mb-8">Search Results</h2>
+          <Link to="/">
+            <div className="flex gap-1.5 font-semibold justify-center items-center">
+              <p>Home</p>
+              <MdArrowOutward />
+            </div>
+          </Link>
+        </div>
 
         {cars.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

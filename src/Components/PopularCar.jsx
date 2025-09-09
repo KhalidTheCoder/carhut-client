@@ -39,7 +39,7 @@ const PopularCar = ({ car }) => {
             <div className="flex items-center gap-2">
               <img
                 className="w-[18px] h-[18px]"
-                src="https://i.ibb.co.com/8DYpbmqH/Icon.png"
+                src="https://i.ibb.co.com/yc8Nftc8/Vector.png"
                 alt="fuel"
               />
               <span>{car.fuelType}</span>
@@ -47,7 +47,7 @@ const PopularCar = ({ car }) => {
             <div className="flex items-center gap-2">
               <img
                 className="w-[18px] h-[18px]"
-                src="https://i.ibb.co.com/8DYpbmqH/Icon.png"
+                src="https://i.ibb.co.com/xtnXfCv2/Vector-1.png"
                 alt="transmission"
               />
               <span>{car.transmission}</span>

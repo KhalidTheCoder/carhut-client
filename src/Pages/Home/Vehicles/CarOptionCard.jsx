@@ -2,7 +2,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 const CarOptionCards = () => {
   return (
-    <div className="max-w-7xl mx-auto py-12 flex flex-col lg:flex-row gap-6">
+    <div className="max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row gap-6">
       {/* Card 1 */}
       <div className="bg-blue-50 rounded-2xl w-full lg:w-[685px] h-auto lg:h-[393.72px] p-6 sm:p-10 lg:p-[80px] flex flex-col relative">
         <div>

@@ -26,8 +26,8 @@ const LatestBlogPosts = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="flex justify-between items-center mb-10 sm:px-2">
+    <div className="max-w-7xl px-4 mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 sm:px-2">
         <h2 className="text-xl md:text-3xl font-bold">Latest Blog Posts</h2>
         <Link>
           <div className="flex gap-1.5 font-semibold justify-center items-center">

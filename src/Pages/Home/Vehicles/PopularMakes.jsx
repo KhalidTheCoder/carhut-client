@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import PopularCar from "../../../Components/PopularCar";
 import { MdArrowOutward } from "react-icons/md";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const PopularMakes = () => {
   const [popularCars, setPopularCars] = useState([]);
@@ -31,17 +32,17 @@ const PopularMakes = () => {
 
   return (
     <div className="bg-[#050B20]">
-      <div className="max-w-7xl mx-auto py-20">
+      <div className="max-w-7xl mx-auto px-4 py-20">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-0 text-white">Popular Makes</h2>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <h2 className="text-xl md:text-3xl font-bold text-white">Popular Makes</h2>
           <button className="flex items-center font-semibold gap-1 text-gray-300 hover:text-white transition">
             View All <MdArrowOutward />
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-6 mb-8 border-b border-gray-700 pb-2">
+        <div className="flex gap-6 mb-8 border-b border-gray-700">
           {["Audi", "Ford", "Mercedes Benz"].map((make) => (
             <button
               key={make}
@@ -80,15 +81,16 @@ const PopularMakes = () => {
           <div className="absolute -bottom-10 left-0 flex gap-3">
             <button
               onClick={() => scroll("left")}
-              className="px-2 rounded-2xl outline text-white hover:bg-gray-700 transition"
+              className="w-[60px] h-[40px] flex justify-center items-center border rounded-[30px] text-white hover:bg-gray-700 transition"
             >
-              &#8592;
+              <IoIosArrowBack />
             </button>
             <button
               onClick={() => scroll("right")}
-              className="px-2 rounded-2xl outline text-white hover:bg-gray-700 transition"
+              className="w-[60px] h-[40px] border flex justify-center items-center rounded-[30px] text-white hover:bg-gray-700 transition"
             >
-              &#8594;
+              
+              <IoIosArrowForward />
             </button>
           </div>
         </div>

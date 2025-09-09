@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu, FiX } from "react-icons/fi";
+import { FaCarSide } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import { Link, useNavigate } from "react-router";
 
@@ -59,7 +60,12 @@ const Navbar = () => {
         <nav className="relative z-20">
           <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 text-white">
             {/* Logo */}
-            <div className="text-2xl font-bold">CarHut</div>
+            <div className="text-2xl flex gap-1.5 items-center font-bold">
+              <div>
+                <FaCarSide />
+              </div>
+              <p>CurHut</p>
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex gap-5 items-center">
