@@ -21,7 +21,7 @@ const SearchResults = () => {
 
     const finalQuery = query.length > 0 ? `?${query.join("&")}` : "";
 
-    fetch(`http://localhost:5000/cars${finalQuery}`)
+    fetch(`https://carhut-server-kuq5.vercel.app/cars${finalQuery}`)
       .then((res) => res.json())
       .then((data) => setCars(data))
       .catch((err) => console.error(err));

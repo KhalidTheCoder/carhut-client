@@ -21,7 +21,7 @@ export default function BoxCar() {
   useEffect(() => {
     async function fetchCars() {
       try {
-        const res = await fetch("http://localhost:5000/cars");
+        const res = await fetch("https://carhut-server-kuq5.vercel.app/cars");
         const cars = await res.json();
 
         const newCars = cars

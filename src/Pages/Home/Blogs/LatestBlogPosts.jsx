@@ -8,7 +8,7 @@ const LatestBlogPosts = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:5000/blogs");
+        const res = await fetch("https://carhut-server-kuq5.vercel.app/blogs");
         const data = await res.json();
 
         // Sort by date descending and take latest 3

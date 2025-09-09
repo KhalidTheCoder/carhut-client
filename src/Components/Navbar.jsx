@@ -15,7 +15,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/cars/brands")
+    fetch("https://carhut-server-kuq5.vercel.app/cars/brands")
       .then((res) => res.json())
       .then((data) => setBrands(data))
       .catch((err) => console.error(err));
@@ -25,7 +25,7 @@ const Navbar = () => {
   // Fetch models when brand changes
   useEffect(() => {
     if (!selectedBrand) return setModels([]);
-    fetch(`http://localhost:5000/cars/models?brand=${selectedBrand}`)
+    fetch(`https://carhut-server-kuq5.vercel.app/cars/models?brand=${selectedBrand}`)
       .then((res) => res.json())
       .then((data) => setModels(data))
       .catch((err) => console.error(err));

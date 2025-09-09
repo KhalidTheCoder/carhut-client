@@ -9,7 +9,7 @@ const PopularMakes = () => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/cars")
+    fetch("https://carhut-server-kuq5.vercel.app/cars")
       .then((res) => res.json())
       .then((data) => setPopularCars(data));
   }, []);
