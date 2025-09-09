@@ -3,12 +3,13 @@ import { createBrowserRouter } from "react-router";
 
 import Home from "../Pages/Home/Home";
 import SearchResults from "../Pages/SearchResults";
+import Error from "../Pages/Error";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    // errorElement: <Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       {
         index: true,
@@ -30,7 +31,7 @@ const Routes = createBrowserRouter([
     ],
   },
 
-  //   { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
 ]);
 
 export default Routes;
